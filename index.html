@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09020a">
+<title>My Beautiful Love ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 45%,
+        #46112f 0%,
+        #1b0818 45%,
+        #030205 100%);
+    font-family: Georgia, serif;
+    color: white;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.tag {
+    color: #ff9acb;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+h1 {
+    color: #ffb5d9;
+    font-size: clamp(27px, 8vw, 42px);
+    text-shadow: 0 0 10px #ff1493,
+                 0 0 25px #ff1493;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeIn 2s ease 1s forwards;
+}
+
+.subtitle {
+    color: #e6a4c4;
+    font-size: 14px;
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: fadeIn 2s ease 1.8s forwards;
+}
+
+.heart-box {
+    width: min(85vw, 360px);
+    filter: drop-shadow(0 0 15px #ff168e);
+    animation: heartbeat 2s ease-in-out 5s infinite;
+}
+
+svg {
+    width: 100%;
+    overflow: visible;
+}
+
+.heart-line {
+    fill: none;
+    stroke: #ff5cae;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 4s ease forwards,
+               glow 2s ease-in-out 4s infinite alternate;
+}
+
+.photo {
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+
+.photo.show {
+    opacity: 1;
+}
+
+.message {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 2s ease;
+    color: #ffb8d9;
+    margin-top: 22px;
+    font-size: 19px;
+    line-height: 1.7;
+    text-shadow: 0 0 12px #ff1493;
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer {
+    color: #bd789d;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 25px;
+    opacity: 0;
+    animation: fadeIn 2s ease 7s forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 5px #ff1493);
+    }
+    to {
+        filter: drop-shadow(0 0 22px #ff1493);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Floating hearts */
+
+.heart-particle {
+    position: fixed;
+    bottom: -30px;
+    color: #ff69b4;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 1;
+    text-shadow: 0 0 12px #ff1493;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Small stars */
+
+.star {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff69b4;
+    animation: twinkle 2s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+@media (max-height: 650px) {
+    .container {
+        padding: 8px;
+    }
+
+    .heart-box {
+        width: min(65vw, 260px);
+    }
+
+    .subtitle {
+        margin-bottom: 12px;
+    }
+
+    .message {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .footer {
+        margin-top: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="tag">
+        A SPECIAL GIFT FOR YOU
+    </div>
+
+    <h1>My Beautiful Love ❤️</h1>
+
+    <p class="subtitle">
+        Sen uchun tayyorlangan kichik bir sovg'a...
+    </p>
+
+    <div class="heart-box">
+
+        <svg viewBox="0 0 300 270">
+
+            <defs>
+                <clipPath id="heartClip">
+                    <path d="
+                    M150 260
+                    C120 230 10 150 10 85
+                    C10 25 90 0 150 65
+                    C210 0 290 25 290 85
+                    C290 150 180 230 150 260 Z"/>
+                </clipPath>
+            </defs>
+
+            <!-- Your photo -->
+            <image
+                href="photo.jpg"
+                x="0"
+                y="0"
+                width="300"
+                height="270"
+                preserveAspectRatio="xMidYMid slice"
+                clip-path="url(#heartClip)"
+                class="photo"
+                id="photo"
+            />
+
+            <!-- Neon heart -->
+            <path class="heart-line" d="
+            M150 260
+            C120 230 10 150 10 85
+            C10 25 90 0 150 65
+            C210 0 290 25 290 85
+            C290 150 180 230 150 260 Z"/>
+
+        </svg>
+
+    </div>
+
+    <div class="message" id="message">
+        Sen mening hayotimdagi<br>
+        eng go'zal insonsan. ❤️
+        <br>
+        <span style="font-size:14px">
+        Har bir yurak urishimda sen bor...
+        </span>
+    </div>
+
+    <div class="footer">
+        MADE WITH LOVE ❤️
+    </div>
+
+</div>
+
+<script>
+
+// Automatic photo and message appearance
+
+window.addEventListener("load", function() {
+
+    setTimeout(function() {
+        document.getElementById("photo")
+        .classList.add("show");
+    }, 4500);
+
+    setTimeout(function() {
+        document.getElementById("message")
+        .classList.add("show");
+    }, 6500);
+
+});
+
+// Floating hearts
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart-particle";
+    heart.innerHTML = "♥";
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (12 + Math.random() * 22) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 11000);
+}
+
+setInterval(createHeart, 500);
+
+// Twinkling stars
+
+for (let i = 0; i < 35; i++) {
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 100 + "vw";
+
+    star.style.top =
+        Math.random() * 100 + "vh";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    document.body.appendChild(star);
+}
+
+</script>
+
+</body>
+</html>
